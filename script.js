@@ -16,15 +16,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         message: this.message.value
     };
 
-    try {
-        // Send POST request to your backend
-        const response = await fetch('http://localhost:5000/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
+try {
+    const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
 
         const result = await response.json();
 
